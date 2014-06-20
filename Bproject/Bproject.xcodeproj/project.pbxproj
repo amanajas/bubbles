@@ -164,6 +164,7 @@
 				TargetAttributes = {
 					AFB0823D1951CE2100281E6E = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 3389E48524;
 					};
 					AFB082531951CE2100281E6E = {
 						CreatedOnToolsVersion = 6.0;
@@ -407,6 +408,7 @@
 				AFB082601951CE2100281E6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AFB082611951CE2100281E6E /* Build configuration list for PBXNativeTarget "BprojectTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +417,7 @@
 				AFB082631951CE2100281E6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
