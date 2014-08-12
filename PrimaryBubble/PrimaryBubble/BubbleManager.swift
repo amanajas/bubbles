@@ -74,7 +74,7 @@ class BubbleManager {
     
     /*
         This method has the responsibility to check if 
-        the touch hit in a bubble. If the bubble has a primary number
+        the touch hit in a bubble. If the bubble has a prime number
         it is removed from screen.
     */
     func checkTouch(scene:SKScene, touches: NSSet, withEvent event: UIEvent) -> Bool {
@@ -86,7 +86,7 @@ class BubbleManager {
             for bubble in bubbleList {
                 
                 if bubble.name == touchedNode.name? {
-                    score = gameNumbers!.isPrimary(touchedNode.name.toInt()!)
+                    score = gameNumbers!.isPrime(touchedNode.name.toInt()!)
                     if score {
                         removeBubble(bubble)
                         break;

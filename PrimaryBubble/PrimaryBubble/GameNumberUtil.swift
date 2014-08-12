@@ -11,10 +11,10 @@ import Foundation
 class GameNumberUtil {
     
     /*
-        This is the primary number list that is used
-        check if a number is primary.
+        This is the prime number list that is used
+        check if a number is prime.
     */
-    private var primaryNumbers = [Int]();
+    private var primeNumbers = [Int]();
     
     /*
         This list is used to get a random number.
@@ -23,16 +23,16 @@ class GameNumberUtil {
     
     
     init(min:Int, max:Int) {
-        generatePrimaryNumbers(min, max: max);
+        generateNumbers(min, max: max);
     }
     
     /*
         This method generates a range of numbers
-        and separates the primary numbers.
+        and separates the prime numbers.
     */
-    private func generatePrimaryNumbers(min:Int, max:Int) {
+    private func generateNumbers(min:Int, max:Int) {
         
-        primaryNumbers = [Int]();
+        primeNumbers = [Int]();
         allNumbers = [Int]();
         
         for var i = min; i < max; i++ {
@@ -44,7 +44,7 @@ class GameNumberUtil {
                 }
             }
             if (isPrimeNumber) {
-                primaryNumbers.append(i);
+                primeNumbers.append(i);
             }
             
             allNumbers.append(i);
@@ -56,9 +56,9 @@ class GameNumberUtil {
         return allNumbers[Int(arc4random_uniform(UInt32(allNumbers.count)))];
     }
     
-    // Check if the number is primary.
-    func isPrimary(number:Int) -> Bool {
-        return primaryNumbers.filter { $0 == number }.count > 0
+    // Check if the number is prime.
+    func isPrime(number:Int) -> Bool {
+        return primeNumbers.filter { $0 == number }.count > 0
     }
     
 }

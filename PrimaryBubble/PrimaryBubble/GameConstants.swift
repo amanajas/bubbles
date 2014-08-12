@@ -17,7 +17,7 @@ import SpriteKit
     // The Initial Game Time.
     static let DEFAULT_GAME_TIME:Float = 60
     
-    // The Time Bonus that it's gain when the player hits the primary number.
+    // The Time Bonus that it's gain when the player hits the prime number.
     static let BONUS_TIME:Float = 1.5
     
     // The range of numbers.
@@ -27,8 +27,11 @@ import SpriteKit
     // The update value to decrease time in the game.
     static let UPDATE_TIME:Float = 1 / 60
     
-    // The default value to gain when the player hits the primary number.
+    // The default value to gain when the player hits the prime number.
     static let SCORE_POINT:Int = 10
+    
+    // The points the user lose when hits the wrong number
+    static let SCORE_LOST:Int = 2
     
     // The space between labels and the screen border.
     static let SCREEN_BORDER:CGFloat = 10

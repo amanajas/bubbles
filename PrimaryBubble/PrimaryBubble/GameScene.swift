@@ -50,7 +50,10 @@ class GameScene: SKScene {
         
         var score:Bool = bubbleManager!.checkTouch(self, touches: touches, withEvent: event)
         if (score) {
-            println("SCORE!!")
+            scoreManager.addPoint()
+            timeManager.addTime()
+        } else {
+            scoreManager.subPoint()
         }
     }
     

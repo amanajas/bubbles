@@ -29,8 +29,8 @@ class TimeManager {
         
     }
     
-    func addTime(value:Float) {
-        totalTime += value
+    func addTime() {
+        totalTime += GameConstants.BONUS_TIME
     }
     
     func isOver() -> Bool {
