@@ -42,7 +42,7 @@ class BubbleManager {
         let rangeX = maxX - minX
         let position:CGFloat = CGFloat(arc4random()) % CGFloat(rangeX) + CGFloat(minX)
         
-        bubble.setScale(0.5)
+        bubble.setScale(GameConstants.BUBBLE_SCALE)
         
         bubble.position = CGPointMake(position, -bubble.size.height * 2)
         

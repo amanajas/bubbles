@@ -45,6 +45,9 @@ import SpriteKit
     // The label font size inside the bubble.
     static let BUBBLE_FONT_SIZE:Float = 25
     
+    // The Bubble scale
+    static let BUBBLE_SCALE:Float = 0.5
+    
     // The default scene gravity
     static let GRAVITY:CGFloat = 0.2
     
