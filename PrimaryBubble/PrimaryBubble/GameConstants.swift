@@ -40,13 +40,13 @@ import SpriteKit
     static let SCREEN_BORDER:CGFloat = 10
     
     // The time to create a new bubble.
-    static let BUBBLE_CREATE_TIME:Float = 0.2
+    static let BUBBLE_CREATE_TIME:Float = 1.1
     
     // The label font size inside the bubble.
     static let BUBBLE_FONT_SIZE:Float = 25
     
-    // The Bubble scale
-    static let BUBBLE_SCALE:CGFloat = 0.5
+    // The Bubble moviment time to end the path
+    static let BUBBLE_MOVIMENT_TIME:NSTimeInterval = 10
     
     // The default scene gravity
     static let GRAVITY:CGFloat = 0.2

@@ -57,8 +57,8 @@ class GameNumberUtil {
     }
     
     // Check if the number is prime.
-    func isPrime(number:Int) -> Bool {
-        return primeNumbers.filter { $0 == number }.count > 0
+    func isPrime(number:String) -> Bool {
+        return primeNumbers.filter { $0 == number.toInt() }.count > 0
     }
     
 }

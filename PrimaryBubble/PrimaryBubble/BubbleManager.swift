@@ -51,22 +51,12 @@ class BubbleManager {
     func createBubble() -> SKSpriteNode {
         
         var bubble:SKSpriteNode = SKSpriteNode(texture:textureAtlas.textureNamed("bubble"))
-        bubble.physicsBody = SKPhysicsBody(rectangleOfSize: bubble.size)
-        bubble.physicsBody.dynamic = true
-        bubble.physicsBody.collisionBitMask = 0
         
-        let minX = bubble.size.width / 2
+        let minX = bubble.size.width
         let maxX = bubbleBounds!.x - bubble.size.width / 2
         let rangeX = maxX - minX
         let position:CGFloat = CGFloat(arc4random()) % CGFloat(rangeX) + CGFloat(minX)
         
-        /* 
-            THE SCALE OF THE IMAGE
-        
-            Perhaps the scale can be removed when the images
-            are fix to a lower size.
-        */
-        bubble.setScale(GameConstants.BUBBLE_SCALE)
         // ------------------------------------------
         
         bubble.position = CGPointMake(position, -bubble.size.height * 2)
@@ -76,6 +66,9 @@ class BubbleManager {
         bubble.name = label.text
         
         bubble.addChild(label)
+        
+        let moveAction = SKAction.moveTo(CGPoint(x: position, y: bubbleBounds!.y), duration: GameConstants.BUBBLE_MOVIMENT_TIME)
+        bubble.runAction(moveAction)
         
         bubbleList.addObject(bubble)
         
@@ -102,28 +95,25 @@ class BubbleManager {
         the touch hit in a bubble. If the bubble has a prime number
         it is removed from screen.
     */
-    func checkTouch(scene:SKScene, touches: NSSet, withEvent event: UIEvent) -> Bool {
+    func checkTouch(scene:SKScene, touches: NSSet) -> Bool {
         var score:Bool = false
         for touch: AnyObject in touches {
             let location = touch.locationInNode(scene)
             let touchedNode = scene.nodeAtPoint(location)
             
-            for bubble in bubbleList {
+            if (touchedNode.name != scene.name) {
+                score = gameNumbers!.isPrime(touchedNode.name)
+                let object = touchedNode as SKSpriteNode
+                if score {
+                    bubbleList.removeObject(object)
+                    object.runAction(explodeAction)
+                } else {
                 
-                if bubble.name == touchedNode.name? {
-                    score = gameNumbers!.isPrime(touchedNode.name.toInt()!)
-                    let object = bubble as SKSpriteNode
-                    if score {
-                        bubbleList.removeObject(bubble)
-                        object.runAction(explodeAction)
-                    } else {
-                        
-                        // Change texture of the bubble
-                        object.texture = textureAtlas.textureNamed("redbubble")
-                    }
-                    break;
+                    // Change texture of the bubble
+                    object.texture = textureAtlas.textureNamed("redbubble")
                 }
             }
+
             
         }
         return score

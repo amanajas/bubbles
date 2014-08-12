@@ -40,15 +40,11 @@ class GameScene: SKScene {
         
         self.addChild(scoreLabel)
         self.addChild(timeLabel)
-        
-        
-        // Setup the scene gravity.
-        self.physicsWorld.gravity = CGVectorMake(0, GameConstants.GRAVITY)
     }
     
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
         
-        var score:Bool = bubbleManager!.checkTouch(self, touches: touches, withEvent: event)
+        var score:Bool = bubbleManager!.checkTouch(self, touches: touches)
         if (score) {
             scoreManager.addPoint()
             timeManager.addTime()
