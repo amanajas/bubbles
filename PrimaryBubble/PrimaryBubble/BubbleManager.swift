@@ -10,9 +10,14 @@ import Foundation
 import SpriteKit
 
 class BubbleManager {
-        
+    
+    // Numbers generator
     private var gameNumbers:GameNumberUtil?
+    
+    // The list of bubbles to check the touch
     private var bubbleList:NSMutableArray = NSMutableArray()
+    
+    // The bounds to create and remove the bubbles
     private var bubbleBounds:CGPoint?
     
     
@@ -21,6 +26,10 @@ class BubbleManager {
         bubbleBounds = bounds
     }
     
+    /*
+        This method creates the bubble including the number
+        and the start position.
+    */
     func createBubble() -> SKSpriteNode {
         
         var bubble:SKSpriteNode = SKSpriteNode(imageNamed: "bubble")
@@ -49,6 +58,25 @@ class BubbleManager {
         
     }
     
+    /*
+        Creates a label to show the number inside the bubble.
+    */
+    private func createNumber() -> SKLabelNode {
+        
+        var numberLabel:SKLabelNode = SKLabelNode(fontNamed:"Chalkduster")
+        numberLabel.fontSize = CGFloat(GameConstants.BUBBLE_FONT_SIZE)
+        numberLabel.text = gameNumbers!.getRandomNumber().description
+        numberLabel.position = CGPointMake(0, CGFloat(-GameConstants.BUBBLE_FONT_SIZE / 2))
+        
+        return numberLabel
+        
+    }
+    
+    /*
+        This method has the responsibility to check if 
+        the touch hit in a bubble. If the bubble has a primary number
+        it is removed from screen.
+    */
     func checkTouch(scene:SKScene, touches: NSSet, withEvent event: UIEvent) -> Bool {
         var score:Bool = false
         for touch: AnyObject in touches {
@@ -60,7 +88,6 @@ class BubbleManager {
                 if bubble.name == touchedNode.name? {
                     score = gameNumbers!.isPrimary(touchedNode.name.toInt()!)
                     if score {
-                        println("-> Number: " + bubble.name)
                         removeBubble(bubble)
                         break;
                     }
@@ -76,6 +103,9 @@ class BubbleManager {
         bubbleList.removeObject(bubble)
     }
     
+    /*
+        This is a generic method that checks some realtime rules.
+    */
     func update() {
         
         // Remove bubbles when they reaches the bounds
@@ -84,16 +114,5 @@ class BubbleManager {
                 removeBubble(bubble)
             }
         }
-    }
-    
-    private func createNumber() -> SKLabelNode {
-        
-        var numberLabel:SKLabelNode = SKLabelNode(fontNamed:"Chalkduster")
-        numberLabel.fontSize = CGFloat(GameConstants.BUBBLE_FONT_SIZE)
-        numberLabel.text = gameNumbers!.getRandomNumber().description
-        numberLabel.position = CGPointMake(0, CGFloat(-GameConstants.BUBBLE_FONT_SIZE / 2))
-        
-        return numberLabel
-        
     }
 }

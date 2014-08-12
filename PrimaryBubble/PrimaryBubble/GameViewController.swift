@@ -20,10 +20,12 @@ class GameViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-                
+        
+        // Setting the view configuration.
         var skView:SKView = self.view as SKView
         skView.ignoresSiblingOrder = true
         
+        // Creating the game scene.
         var scene:SKScene = GameScene.sceneWithSize(skView.bounds.size)
         scene.scaleMode = SKSceneScaleMode.AspectFill
         skView.presentScene(scene)

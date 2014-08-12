@@ -10,11 +10,14 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+    // Labels - Score and Time
     private var scoreLabel:SKLabelNode = SKLabelNode(fontNamed:"Chalkduster")
     private var timeLabel:SKLabelNode = SKLabelNode(fontNamed:"Chalkduster")
     
+    // The bubble create time count.
     private var bubbleCreateTime:Float = 0
     
+    // Managers - Time, Score, Bubble.
     private var timeManager:TimeManager = TimeManager(total: GameConstants.DEFAULT_GAME_TIME, interval: 1)
     private var scoreManager:ScoreManager = ScoreManager()
     private var bubbleManager:BubbleManager?
@@ -23,8 +26,10 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
+        // Initializing the bubble manager.
         bubbleManager = BubbleManager(bounds: CGPoint(x: self.frame.width, y: self.frame.height))
         
+        // Creating the labels
         scoreLabel.fontSize = GameConstants.FONT_SIZE
         scoreLabel.position = CGPoint(x:GameConstants.SCREEN_BORDER, y:GameConstants.FONT_SIZE)
         scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
@@ -36,6 +41,8 @@ class GameScene: SKScene {
         self.addChild(scoreLabel)
         self.addChild(timeLabel)
         
+        
+        // Setup the scene gravity.
         self.physicsWorld.gravity = CGVectorMake(0, GameConstants.GRAVITY)
     }
     
@@ -49,15 +56,20 @@ class GameScene: SKScene {
     
     override func update(currentTime: CFTimeInterval) {
         
+        // Update time.
         timeManager.update()
         
+        // Update bubbles.
         bubbleManager!.update()
         
+        // Show time and score
         timeLabel.text = "Time: " + timeManager.getTime()
         scoreLabel.text = "Score: " + scoreManager.getScore()
         
+        // Check if the game is over.
         if (!timeManager.isOver()) {
             
+            // If not, create the bubble.
             bubbleCreateTime += GameConstants.UPDATE_TIME
             if (bubbleCreateTime >= GameConstants.BUBBLE_CREATE_TIME) {
                 bubbleCreateTime = 0
