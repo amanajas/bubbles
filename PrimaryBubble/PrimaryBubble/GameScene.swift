@@ -80,7 +80,6 @@ class GameScene: SKScene {
         } else {
             
             gameOver = true
-            self.finalize()
         }
         
     }
