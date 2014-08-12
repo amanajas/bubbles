@@ -11,8 +11,8 @@ import SpriteKit
 class GameScene: SKScene {
     
     // Labels - Score and Time
-    private var scoreLabel:SKLabelNode = SKLabelNode(fontNamed:"Chalkduster")
-    private var timeLabel:SKLabelNode = SKLabelNode(fontNamed:"Chalkduster")
+    private var scoreLabel:SKLabelNode = SKLabelNode(fontNamed:GameConstants.FONT_NAME)
+    private var timeLabel:SKLabelNode = SKLabelNode(fontNamed:GameConstants.FONT_NAME)
     
     // The bubble create time count.
     private var bubbleCreateTime:Float = 0

@@ -11,6 +11,9 @@ import SpriteKit
 
  struct GameConstants {
     
+    // The Game Font Name
+    static let FONT_NAME:String = "Chalkduster"
+    
     // The Game Label font size.
     static let FONT_SIZE:CGFloat = 12.5
     

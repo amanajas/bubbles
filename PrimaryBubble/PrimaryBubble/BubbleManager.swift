@@ -63,7 +63,7 @@ class BubbleManager {
     */
     private func createNumber() -> SKLabelNode {
         
-        var numberLabel:SKLabelNode = SKLabelNode(fontNamed:"Chalkduster")
+        var numberLabel:SKLabelNode = SKLabelNode(fontNamed:GameConstants.FONT_NAME)
         numberLabel.fontSize = CGFloat(GameConstants.BUBBLE_FONT_SIZE)
         numberLabel.text = gameNumbers!.getRandomNumber().description
         numberLabel.position = CGPointMake(0, CGFloat(-GameConstants.BUBBLE_FONT_SIZE / 2))
