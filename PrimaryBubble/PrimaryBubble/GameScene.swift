@@ -21,7 +21,9 @@ class GameScene: SKScene {
     private var timeManager:TimeManager = TimeManager(total: GameConstants.DEFAULT_GAME_TIME, interval: 1)
     private var scoreManager:ScoreManager = ScoreManager()
     private var bubbleManager:BubbleManager?
-    
+
+    // GameOver Flag
+    private var gameOver:Bool = false
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -75,6 +77,10 @@ class GameScene: SKScene {
                 self.addChild(bubbleManager!.createBubble())
             }
             
+        } else {
+            
+            gameOver = true
+            self.finalize()
         }
         
     }

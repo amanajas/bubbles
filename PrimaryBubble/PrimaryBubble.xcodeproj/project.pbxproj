@@ -11,6 +11,7 @@
 		AF2390331995029100BFE339 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2390321995029100BFE339 /* ScoreManager.swift */; };
 		AF23903D1995531000BFE339 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23903C1995531000BFE339 /* AudioManager.swift */; };
 		AF23903F1995647200BFE339 /* BubbleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23903E1995647200BFE339 /* BubbleManager.swift */; };
+		AF24B2DE199AA30A007FC871 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF24B2DD199AA30A007FC871 /* UIKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AF2FFC1A1993904D007D0F1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2FFC191993904D007D0F1E /* AppDelegate.swift */; };
 		AF2FFC1C1993904D007D0F1E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AF2FFC1B1993904D007D0F1E /* GameScene.sks */; };
 		AF2FFC1E1993904D007D0F1E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2FFC1D1993904D007D0F1E /* GameScene.swift */; };
@@ -38,6 +39,7 @@
 		AF2390321995029100BFE339 /* ScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		AF23903C1995531000BFE339 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		AF23903E1995647200BFE339 /* BubbleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleManager.swift; sourceTree = "<group>"; };
+		AF24B2DD199AA30A007FC871 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AF2FFC141993904D007D0F1E /* PrimaryBubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimaryBubble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2FFC181993904D007D0F1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF2FFC191993904D007D0F1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF24B2DE199AA30A007FC871 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +78,7 @@
 		AF2FFC0B1993904D007D0F1E = {
 			isa = PBXGroup;
 			children = (
+				AF24B2DD199AA30A007FC871 /* UIKit.framework */,
 				AF48B2E4199A82EE0012C8EF /* bubble.atlas */,
 				AF2FFC161993904D007D0F1E /* PrimaryBubble */,
 				AF2FFC2D1993904D007D0F1E /* PrimaryBubbleTests */,
