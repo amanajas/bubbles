@@ -11,6 +11,12 @@ import SpriteKit
 
 class BubbleManager {
     
+    // Sprite folder
+    let textureAtlas = SKTextureAtlas(named: "bubble")
+    
+    // Bubble explode action
+    private var explodeAction : SKAction?
+    
     // Numbers generator
     private var gameNumbers:GameNumberUtil?
     
@@ -24,6 +30,18 @@ class BubbleManager {
     init(bounds:CGPoint) {
         gameNumbers = GameNumberUtil(min: GameConstants.MIN_NUMBER, max: GameConstants.MAX_NUMBER)
         bubbleBounds = bounds
+        
+        // Srpite to create explosion animation
+        var bubbleExploreArray:Array = Array<SKTexture>();
+        
+        bubbleExploreArray.append(textureAtlas.textureNamed("bubble_explode1"));
+        bubbleExploreArray.append(textureAtlas.textureNamed("bubble_explode2"));
+        bubbleExploreArray.append(textureAtlas.textureNamed("bubble_explode3"));
+        bubbleExploreArray.append(textureAtlas.textureNamed("bubble_explode4"));
+        
+        let animateAction = SKAction.animateWithTextures(bubbleExploreArray, timePerFrame: 0.1)
+        let sequenceAction = SKAction.sequence([animateAction, SKAction.removeFromParent()])
+        explodeAction = SKAction.repeatAction(sequenceAction, count: 1)
     }
     
     /*
@@ -32,7 +50,7 @@ class BubbleManager {
     */
     func createBubble() -> SKSpriteNode {
         
-        var bubble:SKSpriteNode = SKSpriteNode(imageNamed: "bubble")
+        var bubble:SKSpriteNode = SKSpriteNode(texture:textureAtlas.textureNamed("bubble"))
         bubble.physicsBody = SKPhysicsBody(rectangleOfSize: bubble.size)
         bubble.physicsBody.dynamic = true
         bubble.physicsBody.collisionBitMask = 0
@@ -42,7 +60,14 @@ class BubbleManager {
         let rangeX = maxX - minX
         let position:CGFloat = CGFloat(arc4random()) % CGFloat(rangeX) + CGFloat(minX)
         
+        /* 
+            THE SCALE OF THE IMAGE
+        
+            Perhaps the scale can be removed when the images
+            are fix to a lower size.
+        */
         bubble.setScale(GameConstants.BUBBLE_SCALE)
+        // ------------------------------------------
         
         bubble.position = CGPointMake(position, -bubble.size.height * 2)
         
@@ -87,20 +112,21 @@ class BubbleManager {
                 
                 if bubble.name == touchedNode.name? {
                     score = gameNumbers!.isPrime(touchedNode.name.toInt()!)
+                    let object = bubble as SKSpriteNode
                     if score {
-                        removeBubble(bubble)
-                        break;
+                        bubbleList.removeObject(bubble)
+                        object.runAction(explodeAction)
+                    } else {
+                        
+                        // Change texture of the bubble
+                        object.texture = textureAtlas.textureNamed("redbubble")
                     }
+                    break;
                 }
             }
             
         }
         return score
-    }
-    
-    private func removeBubble(bubble:AnyObject) {
-        bubble.removeFromParent()
-        bubbleList.removeObject(bubble)
     }
     
     /*
@@ -111,7 +137,8 @@ class BubbleManager {
         // Remove bubbles when they reaches the bounds
         for bubble in bubbleList {
             if (bubble.position.y >= bubbleBounds!.y) {
-                removeBubble(bubble)
+                bubble.removeFromParent()
+                bubbleList.removeObject(bubble)
             }
         }
     }
