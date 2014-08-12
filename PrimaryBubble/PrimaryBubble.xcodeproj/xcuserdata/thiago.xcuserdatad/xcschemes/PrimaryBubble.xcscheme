@@ -14,10 +14,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AFB0823D1951CE2100281E6E"
-               BuildableName = "Bproject.app"
-               BlueprintName = "Bproject"
-               ReferencedContainer = "container:Bproject.xcodeproj">
+               BlueprintIdentifier = "AF2FFC131993904D007D0F1E"
+               BuildableName = "PrimaryBubble.app"
+               BlueprintName = "PrimaryBubble"
+               ReferencedContainer = "container:PrimaryBubble.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AF2FFC291993904D007D0F1E"
+               BuildableName = "PrimaryBubbleTests.xctest"
+               BlueprintName = "PrimaryBubbleTests"
+               ReferencedContainer = "container:PrimaryBubble.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AFB082531951CE2100281E6E"
-               BuildableName = "BprojectTests.xctest"
-               BlueprintName = "BprojectTests"
-               ReferencedContainer = "container:Bproject.xcodeproj">
+               BlueprintIdentifier = "AF2FFC291993904D007D0F1E"
+               BuildableName = "PrimaryBubbleTests.xctest"
+               BlueprintName = "PrimaryBubbleTests"
+               ReferencedContainer = "container:PrimaryBubble.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AFB0823D1951CE2100281E6E"
-            BuildableName = "Bproject.app"
-            BlueprintName = "Bproject"
-            ReferencedContainer = "container:Bproject.xcodeproj">
+            BlueprintIdentifier = "AF2FFC131993904D007D0F1E"
+            BuildableName = "PrimaryBubble.app"
+            BlueprintName = "PrimaryBubble"
+            ReferencedContainer = "container:PrimaryBubble.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,10 +75,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AFB0823D1951CE2100281E6E"
-            BuildableName = "Bproject.app"
-            BlueprintName = "Bproject"
-            ReferencedContainer = "container:Bproject.xcodeproj">
+            BlueprintIdentifier = "AF2FFC131993904D007D0F1E"
+            BuildableName = "PrimaryBubble.app"
+            BlueprintName = "PrimaryBubble"
+            ReferencedContainer = "container:PrimaryBubble.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,10 +93,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AFB0823D1951CE2100281E6E"
-            BuildableName = "Bproject.app"
-            BlueprintName = "Bproject"
-            ReferencedContainer = "container:Bproject.xcodeproj">
+            BlueprintIdentifier = "AF2FFC131993904D007D0F1E"
+            BuildableName = "PrimaryBubble.app"
+            BlueprintName = "PrimaryBubble"
+            ReferencedContainer = "container:PrimaryBubble.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

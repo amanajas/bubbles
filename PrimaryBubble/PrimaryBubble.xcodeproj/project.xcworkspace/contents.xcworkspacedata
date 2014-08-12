@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Bproject.xcodeproj">
+      location = "self:PrimaryBubble.xcodeproj">
    </FileRef>
 </Workspace>

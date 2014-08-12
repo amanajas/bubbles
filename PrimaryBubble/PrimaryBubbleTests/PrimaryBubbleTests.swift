@@ -1,14 +1,15 @@
 //
-//  BprojectTests.swift
-//  BprojectTests
+//  PrimaryBubbleTests.swift
+//  PrimaryBubbleTests
 //
-//  Created by Thiago Amanajas on 6/18/14.
+//  Created by Thiago Amanajas on 8/7/14.
 //  Copyright (c) 2014 Thiago Amanajas. All rights reserved.
 //
 
+import UIKit
 import XCTest
 
-class BprojectTests: XCTestCase {
+class PrimaryBubbleTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

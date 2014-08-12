@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Bproject.xcscheme</key>
+		<key>PrimaryBubble.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>AFB0823D1951CE2100281E6E</key>
+		<key>AF2FFC131993904D007D0F1E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AFB082531951CE2100281E6E</key>
+		<key>AF2FFC291993904D007D0F1E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
