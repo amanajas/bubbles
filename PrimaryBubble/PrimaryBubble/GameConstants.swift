@@ -48,9 +48,6 @@ import SpriteKit
     // The Bubble moviment time to end the path
     static let BUBBLE_MOVIMENT_TIME:NSTimeInterval = 10
     
-    // The default scene gravity
-    static let GRAVITY:CGFloat = 0.2
-    
     // Percent of creation of prime numbers
     static let PRIME_PERCENT:Int = 25
     
