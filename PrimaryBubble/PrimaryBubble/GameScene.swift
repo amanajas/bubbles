@@ -21,6 +21,9 @@ class GameScene: SKScene {
     private var timeManager:TimeManager = TimeManager(total: GameConstants.DEFAULT_GAME_TIME, interval: 1)
     private var scoreManager:ScoreManager = ScoreManager()
     private var bubbleManager:BubbleManager?
+    
+    private var uiLayer : SKNode = SKNode()
+    private var bubbleLayer : SKNode = SKNode()
 
     // GameOver Flag
     private var gameOver:Bool = false
@@ -45,9 +48,16 @@ class GameScene: SKScene {
         // Set background color
         self.backgroundColor = SKColor.whiteColor()
         
+        // Set the ui layer position
+        uiLayer.zPosition = 1
+        
+        // Add Layers
+        self.addChild(bubbleLayer)
+        self.addChild(uiLayer)
+        
         // Add labels
-        self.addChild(scoreLabel)
-        self.addChild(timeLabel)
+        uiLayer.addChild(scoreLabel)
+        uiLayer.addChild(timeLabel)
     }
     
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
@@ -80,13 +90,14 @@ class GameScene: SKScene {
             bubbleCreateTime += GameConstants.UPDATE_TIME
             if (bubbleCreateTime >= GameConstants.BUBBLE_CREATE_TIME) {
                 bubbleCreateTime = 0
-                self.addChild(bubbleManager!.createBubble())
+                bubbleLayer.addChild(bubbleManager!.createBubble())
             }
             
         } else if !gameOver {
             gameOver = true
             
             // DO SOMETHING
+            
             
         }
         
