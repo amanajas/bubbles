@@ -24,7 +24,7 @@ import SpriteKit
     static let BONUS_TIME:Float = 1.5
     
     // The range of numbers.
-    static let MIN_NUMBER:Int = 0
+    static let MIN_NUMBER:Int = 2
     static let MAX_NUMBER:Int = 1000
     
     // The update value to decrease time in the game.
@@ -50,5 +50,8 @@ import SpriteKit
     
     // The default scene gravity
     static let GRAVITY:CGFloat = 0.2
+    
+    // Percent of creation of prime numbers
+    static let PRIME_PERCENT:Int = 25
     
 }

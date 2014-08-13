@@ -10,6 +10,12 @@ import Foundation
 
 class GameNumberUtil {
     
+    // Used to balance the creation of numbers
+    private var maxNormalNumbersCount : Int = 0
+    
+    // Used to count the normal numbers
+    private var numbersCount : Int = 0
+    
     /*
         This is the prime number list that is used
         check if a number is prime.
@@ -49,11 +55,26 @@ class GameNumberUtil {
             
             allNumbers.append(i);
         }
+        
+        // Calculates the maximum of normal numbers must to be created before the prime numbers.
+        maxNormalNumbersCount = Int(GameConstants.DEFAULT_GAME_TIME) / ((primeNumbers.count * 100) / allNumbers.count)
     }
     
     // Return a random number.
     func getRandomNumber() -> Int {
-        return allNumbers[Int(arc4random_uniform(UInt32(allNumbers.count)))];
+        
+        var number = allNumbers[Int(arc4random_uniform(UInt32(allNumbers.count)))]
+        if !isPrime(number.description) {
+            numbersCount++
+            if numbersCount > maxNormalNumbersCount {
+                number = primeNumbers[Int(arc4random_uniform(UInt32(primeNumbers.count)))]
+                numbersCount = 0
+            }
+        } else {
+            numbersCount = 0
+        }
+        
+        return number
     }
     
     // Check if the number is prime.
