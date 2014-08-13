@@ -99,7 +99,6 @@ class BubbleManager {
         numberLabel.fontSize = CGFloat(GameConstants.BUBBLE_FONT_SIZE)
         numberLabel.text = gameNumbers!.getRandomNumber().description
         numberLabel.position = CGPointMake(0, CGFloat(-GameConstants.BUBBLE_FONT_SIZE / 2))
-        
         return numberLabel
         
     }

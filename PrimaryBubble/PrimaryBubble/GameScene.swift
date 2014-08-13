@@ -35,11 +35,17 @@ class GameScene: SKScene {
         scoreLabel.fontSize = GameConstants.FONT_SIZE
         scoreLabel.position = CGPoint(x:GameConstants.SCREEN_BORDER, y:GameConstants.FONT_SIZE)
         scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+        scoreLabel.fontColor = SKColor.blackColor()
         
         timeLabel.fontSize = GameConstants.FONT_SIZE
         timeLabel.position = CGPoint(x:CGRectGetMidX(self.frame) + GameConstants.SCREEN_BORDER, y:GameConstants.FONT_SIZE)
         timeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+        timeLabel.fontColor = SKColor.blackColor()
         
+        // Set background color
+        self.backgroundColor = SKColor.whiteColor()
+        
+        // Add labels
         self.addChild(scoreLabel)
         self.addChild(timeLabel)
     }
@@ -81,6 +87,7 @@ class GameScene: SKScene {
             gameOver = true
             
             // DO SOMETHING
+            
         }
         
     }

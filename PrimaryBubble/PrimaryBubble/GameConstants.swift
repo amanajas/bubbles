@@ -12,7 +12,7 @@ import SpriteKit
  struct GameConstants {
     
     // The Game Font Name
-    static let FONT_NAME:String = "Chalkduster"
+    static let FONT_NAME:String = "System"
     
     // The Game Label font size.
     static let FONT_SIZE:CGFloat = 12.5
@@ -21,7 +21,7 @@ import SpriteKit
     static let DEFAULT_GAME_TIME:Float = 60
     
     // The Time Bonus that it's gain when the player hits the prime number.
-    static let BONUS_TIME:Float = 1.5
+    static let BONUS_TIME:Float = 4.5
     
     // The range of numbers.
     static let MIN_NUMBER:Int = 2
@@ -34,7 +34,7 @@ import SpriteKit
     static let SCORE_POINT:Int = 10
     
     // The points the user lose when hits the wrong number
-    static let SCORE_LOST:Int = 2
+    static let SCORE_LOST:Int = 5
     
     // The space between labels and the screen border.
     static let SCREEN_BORDER:CGFloat = 10

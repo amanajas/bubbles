@@ -57,20 +57,17 @@ class GameNumberUtil {
         }
         
         // Calculates the maximum of normal numbers must to be created before the prime numbers.
-        maxNormalNumbersCount = Int(GameConstants.DEFAULT_GAME_TIME) / ((primeNumbers.count * 100) / allNumbers.count)
+        maxNormalNumbersCount = 1 + Int(GameConstants.DEFAULT_GAME_TIME) /
+            ((primeNumbers.count * 100) / allNumbers.count)
     }
     
     // Return a random number.
     func getRandomNumber() -> Int {
         
         var number = allNumbers[Int(arc4random_uniform(UInt32(allNumbers.count)))]
-        if !isPrime(number.description) {
-            numbersCount++
-            if numbersCount > maxNormalNumbersCount {
-                number = primeNumbers[Int(arc4random_uniform(UInt32(primeNumbers.count)))]
-                numbersCount = 0
-            }
-        } else {
+        numbersCount = !isPrime(number.description) ? numbersCount + 1 : 0
+        if numbersCount > Int(arc4random()) % maxNormalNumbersCount {
+            number = primeNumbers[Int(arc4random_uniform(UInt32(primeNumbers.count)))]
             numbersCount = 0
         }
         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF21A6AA199BB9CD00FD85B8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21A6A9199BB9CD00FD85B8 /* MainViewController.swift */; };
 		AF2390311994EB5900BFE339 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2390301994EB5900BFE339 /* TimeManager.swift */; };
 		AF2390331995029100BFE339 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2390321995029100BFE339 /* ScoreManager.swift */; };
 		AF23903D1995531000BFE339 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23903C1995531000BFE339 /* AudioManager.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF21A6A9199BB9CD00FD85B8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AF2390301994EB5900BFE339 /* TimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		AF2390321995029100BFE339 /* ScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		AF23903C1995531000BFE339 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		AF2FFC161993904D007D0F1E /* PrimaryBubble */ = {
 			isa = PBXGroup;
 			children = (
+				AF21A6A9199BB9CD00FD85B8 /* MainViewController.swift */,
 				AF2FFC191993904D007D0F1E /* AppDelegate.swift */,
 				AF2FFC1B1993904D007D0F1E /* GameScene.sks */,
 				AF2FFC1D1993904D007D0F1E /* GameScene.swift */,
@@ -250,6 +253,7 @@
 				AF2FFC1A1993904D007D0F1E /* AppDelegate.swift in Sources */,
 				AF2FFC4A1993D963007D0F1E /* GameConstants.swift in Sources */,
 				AF2390331995029100BFE339 /* ScoreManager.swift in Sources */,
+				AF21A6AA199BB9CD00FD85B8 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
