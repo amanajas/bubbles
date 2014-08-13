@@ -12,7 +12,7 @@ import SpriteKit
 class BubbleManager {
     
     // Sprite folder
-    let textureAtlas = SKTextureAtlas(named: "bubble")
+    let bubbleTextureAtlas = SKTextureAtlas(named: "bubble")
     
     // Bubble explode action
     private var explodeAction : SKAction?
@@ -37,10 +37,10 @@ class BubbleManager {
         
         // Srpite to create explosion animation
         var bubbleExploreArray:Array = Array<SKTexture>();
-        bubbleExploreArray.append(textureAtlas.textureNamed("bubble_explode1"));
-        bubbleExploreArray.append(textureAtlas.textureNamed("bubble_explode2"));
-        bubbleExploreArray.append(textureAtlas.textureNamed("bubble_explode3"));
-        bubbleExploreArray.append(textureAtlas.textureNamed("bubble_explode4"));
+        bubbleExploreArray.append(bubbleTextureAtlas.textureNamed("bubble_explode1"));
+        bubbleExploreArray.append(bubbleTextureAtlas.textureNamed("bubble_explode2"));
+        bubbleExploreArray.append(bubbleTextureAtlas.textureNamed("bubble_explode3"));
+        bubbleExploreArray.append(bubbleTextureAtlas.textureNamed("bubble_explode4"));
         
         // Explosion animation
         let animateAction = SKAction.animateWithTextures(bubbleExploreArray, timePerFrame: 0.1)
@@ -59,7 +59,7 @@ class BubbleManager {
     func createBubble() -> SKSpriteNode {
         
         // Bubble sprite
-        var bubble:SKSpriteNode = SKSpriteNode(texture:textureAtlas.textureNamed("bubble"))
+        var bubble:SKSpriteNode = SKSpriteNode(texture:bubbleTextureAtlas.textureNamed("bubble"))
         
         // Create the range of initial position
         let minX = bubble.size.width
@@ -75,7 +75,7 @@ class BubbleManager {
         bubble.addChild(label)
         
         // Create and add the bubble hit
-        let bubblehit = SKSpriteNode(texture: textureAtlas.textureNamed("bubblehit"))
+        let bubblehit = SKSpriteNode(texture: bubbleTextureAtlas.textureNamed("bubblehit"))
         bubblehit.name = label.text
         bubble.addChild(bubblehit)
         
@@ -130,7 +130,7 @@ class BubbleManager {
                 } else {
                 
                     // Change texture of the bubble
-                    object.texture = textureAtlas.textureNamed("redbubble")
+                    object.texture = bubbleTextureAtlas.textureNamed("redbubble")
                 }
             }
 
