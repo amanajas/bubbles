@@ -77,9 +77,10 @@ class GameScene: SKScene {
                 self.addChild(bubbleManager!.createBubble())
             }
             
-        } else {
-            
+        } else if !gameOver {
             gameOver = true
+            
+            // DO SOMETHING
         }
         
     }

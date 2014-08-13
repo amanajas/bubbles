@@ -28,19 +28,27 @@ class BubbleManager {
     
     
     init(bounds:CGPoint) {
+        
+        // Create numbers
         gameNumbers = GameNumberUtil(min: GameConstants.MIN_NUMBER, max: GameConstants.MAX_NUMBER)
+        
+        // Save the bounds
         bubbleBounds = bounds
         
         // Srpite to create explosion animation
         var bubbleExploreArray:Array = Array<SKTexture>();
-        
         bubbleExploreArray.append(textureAtlas.textureNamed("bubble_explode1"));
         bubbleExploreArray.append(textureAtlas.textureNamed("bubble_explode2"));
         bubbleExploreArray.append(textureAtlas.textureNamed("bubble_explode3"));
         bubbleExploreArray.append(textureAtlas.textureNamed("bubble_explode4"));
         
+        // Explosion animation
         let animateAction = SKAction.animateWithTextures(bubbleExploreArray, timePerFrame: 0.1)
+        
+        // Create the action sequence, after the explosion remove the bubble
         let sequenceAction = SKAction.sequence([animateAction, SKAction.removeFromParent()])
+        
+        //Repeat this action once
         explodeAction = SKAction.repeatAction(sequenceAction, count: 1)
     }
     
@@ -50,26 +58,32 @@ class BubbleManager {
     */
     func createBubble() -> SKSpriteNode {
         
+        // Bubble sprite
         var bubble:SKSpriteNode = SKSpriteNode(texture:textureAtlas.textureNamed("bubble"))
         
+        // Create the range of initial position
         let minX = bubble.size.width
         let maxX = bubbleBounds!.x - bubble.size.width / 2
         let rangeX = maxX - minX
         let position:CGFloat = CGFloat(arc4random()) % CGFloat(rangeX) + CGFloat(minX)
         
-        // ------------------------------------------
-        
+        // Set bubble position below the screen
         bubble.position = CGPointMake(position, -bubble.size.height * 2)
         
+        // Create and add number label
         var label:SKLabelNode = createNumber()
-        
-        bubble.name = label.text
-        
         bubble.addChild(label)
         
+        // Create and add the bubble hit
+        let bubblehit = SKSpriteNode(texture: textureAtlas.textureNamed("bubblehit"))
+        bubblehit.name = label.text
+        bubble.addChild(bubblehit)
+        
+        // Set bubble move action
         let moveAction = SKAction.moveTo(CGPoint(x: position, y: bubbleBounds!.y), duration: GameConstants.BUBBLE_MOVIMENT_TIME)
         bubble.runAction(moveAction)
         
+        // Add bubble to the check list
         bubbleList.addObject(bubble)
         
         return bubble
@@ -101,9 +115,15 @@ class BubbleManager {
             let location = touch.locationInNode(scene)
             let touchedNode = scene.nodeAtPoint(location)
             
+            // Check if the touch was in the scene
             if (touchedNode.name != scene.name) {
+                
+                // Check if the bubble name is a prime number
                 score = gameNumbers!.isPrime(touchedNode.name)
-                let object = touchedNode as SKSpriteNode
+                
+                // Convert the parent of the touch point in a sprite node
+                let object = touchedNode.parent as SKSpriteNode
+                
                 if score {
                     bubbleList.removeObject(object)
                     object.runAction(explodeAction)
