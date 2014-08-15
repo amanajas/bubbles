@@ -57,6 +57,8 @@ class GameViewController: UIViewController, GameOver {
     
     func finishGame(score: String) {
         
+        let gameOverScreen = self.storyboard.instantiateViewControllerWithIdentifier("OverScreen") as UIViewController
         
+        showViewController(gameOverScreen, sender: self)
     }
 }

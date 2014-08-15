@@ -134,11 +134,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PrimaryBubble/GameViewController.swift"
-            timestampString = "429810436.772967"
+            timestampString = "429814699.93287"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "finishGame(_:)"
             landmarkType = "5">
          </BreakpointContent>

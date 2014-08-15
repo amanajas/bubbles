@@ -19,7 +19,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3R-PG-Mxh">
                                 <rect key="frame" x="260" y="263" width="80" height="75"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Start" backgroundImage="bubble.png">
                                     <color key="titleColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,6 +34,12 @@
                                     <segue destination="BV1-FR-VrT" kind="show" id="rTl-tU-5NG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BUBBLES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeJ-oc-kOL">
+                                <rect key="frame" x="171" y="171" width="258" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <color key="textColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -82,36 +88,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME OVER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdy-HD-3xf">
-                                <rect key="frame" x="143" y="69" width="315" height="66"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME OVER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdy-HD-3xf">
+                                <rect key="frame" x="171" y="69" width="258" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.22538601080000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6H-qc-Fx3">
-                                <rect key="frame" x="177" y="263" width="80" height="75"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="260" y="262" width="80" height="75"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Retry" backgroundImage="redbubble.png">
                                     <color key="titleColor" red="1" green="0.0" blue="0.22538601080000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="ScoreLabel" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-9l-iqq">
-                                <rect key="frame" x="143" y="187" width="315" height="68"/>
+                                <rect key="frame" x="171" y="148" width="259" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="QdI-lM-d0u"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.22538601080000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xva-Cp-mfD">
-                                <rect key="frame" x="362" y="269" width="65" height="63"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5L-pK-gmO">
+                                <rect key="frame" x="236" y="124" width="129" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="65" id="xr2-S3-cW3"/>
+                                    <constraint firstAttribute="width" constant="129" id="QfE-sa-JZ9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.22538601080000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7m-l2-WC9">
+                                <rect key="frame" x="260" y="345" width="80" height="75"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Exit" backgroundImage="bubble.png">
+                                    <color key="titleColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -119,15 +132,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0cd-9l-iqq" firstAttribute="leading" secondItem="Vdy-HD-3xf" secondAttribute="leading" id="2TW-R1-wJa"/>
-                            <constraint firstAttribute="centerX" secondItem="Xva-Cp-mfD" secondAttribute="centerX" constant="-94.5" id="Jsf-Ja-uvK"/>
-                            <constraint firstItem="7DE-0i-Tbe" firstAttribute="top" secondItem="Xva-Cp-mfD" secondAttribute="bottom" constant="268" id="Oss-Jz-xv3"/>
+                            <constraint firstItem="H7m-l2-WC9" firstAttribute="top" secondItem="l6H-qc-Fx3" secondAttribute="bottom" constant="8" symbolic="YES" id="Ewa-y7-Aqu"/>
                             <constraint firstAttribute="centerX" secondItem="Vdy-HD-3xf" secondAttribute="centerX" id="VDm-BH-nzw"/>
                             <constraint firstItem="Vdy-HD-3xf" firstAttribute="top" secondItem="KZU-cl-ZUK" secondAttribute="top" constant="69" id="Vw3-8I-sST"/>
                             <constraint firstAttribute="centerY" secondItem="l6H-qc-Fx3" secondAttribute="centerY" id="a0t-AP-sZY"/>
-                            <constraint firstAttribute="centerX" secondItem="0cd-9l-iqq" secondAttribute="centerX" id="iB4-og-mSZ"/>
-                            <constraint firstItem="Xva-Cp-mfD" firstAttribute="centerY" secondItem="l6H-qc-Fx3" secondAttribute="centerY" id="juZ-QN-c2N"/>
-                            <constraint firstItem="l6H-qc-Fx3" firstAttribute="top" secondItem="0cd-9l-iqq" secondAttribute="bottom" constant="8" symbolic="YES" id="l3P-de-dxo"/>
-                            <constraint firstAttribute="centerX" secondItem="l6H-qc-Fx3" secondAttribute="centerX" constant="83" id="pcD-wa-Inb"/>
+                            <constraint firstAttribute="centerX" secondItem="H7m-l2-WC9" secondAttribute="centerX" id="a8I-Ai-qXC"/>
+                            <constraint firstAttribute="centerX" secondItem="0cd-9l-iqq" secondAttribute="centerX" constant="-0.5" id="iB4-og-mSZ"/>
+                            <constraint firstItem="l6H-qc-Fx3" firstAttribute="top" secondItem="0cd-9l-iqq" secondAttribute="bottom" constant="46" id="l3P-de-dxo"/>
+                            <constraint firstAttribute="centerX" secondItem="f5L-pK-gmO" secondAttribute="centerX" id="mxk-iE-myE"/>
+                            <constraint firstItem="f5L-pK-gmO" firstAttribute="top" secondItem="Vdy-HD-3xf" secondAttribute="bottom" constant="1" id="mz3-bt-Dbg"/>
+                            <constraint firstAttribute="centerX" secondItem="l6H-qc-Fx3" secondAttribute="centerX" id="pcD-wa-Inb"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
