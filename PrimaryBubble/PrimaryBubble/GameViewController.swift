@@ -9,25 +9,27 @@
 import UIKit
 import SpriteKit
 
+class GameViewController: UIViewController, GameOver {
 
-class GameViewController: UIViewController {
-
+    private var scene:GameScene?
+    private var skView:SKView!
+    
     private var audioManager:AudioManager = AudioManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
     }
     
     override func viewWillLayoutSubviews() {
         
         // Setting the view configuration.
-        var skView:SKView = self.view as SKView
+        skView = self.view as SKView
         skView.ignoresSiblingOrder = true
         
         // Creating the game scene.
-        var scene:SKScene = GameScene.sceneWithSize(skView.bounds.size)
-        scene.scaleMode = SKSceneScaleMode.AspectFill
+        scene = GameScene.sceneWithSize(skView.bounds.size) as GameScene
+        scene!.scaleMode = SKSceneScaleMode.AspectFill
+        scene!.setGameOverCallback(self)
         skView.presentScene(scene)
         
     }
@@ -51,5 +53,10 @@ class GameViewController: UIViewController {
 
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    func finishGame(score: String) {
+        
+        
     }
 }

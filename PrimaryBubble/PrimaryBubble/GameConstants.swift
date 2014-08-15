@@ -18,7 +18,7 @@ import SpriteKit
     static let FONT_SIZE:CGFloat = 12.5
     
     // The Initial Game Time.
-    static let DEFAULT_GAME_TIME:Float = 60
+    static let DEFAULT_GAME_TIME:Float = 5
     
     // The Time Bonus that it's gain when the player hits the prime number.
     static let BONUS_TIME:Float = 4.5

@@ -8,6 +8,11 @@
 
 import SpriteKit
 
+protocol GameOver {
+    
+    func finishGame(score:String)
+}
+
 class GameScene: SKScene {
     
     // Labels - Score and Time
@@ -27,6 +32,12 @@ class GameScene: SKScene {
 
     // GameOver Flag
     private var gameOver:Bool = false
+    
+    private var gameOverCallback: GameOver?
+    
+    func setGameOverCallback(callback:GameOver) {
+        gameOverCallback = callback
+    }
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -96,8 +107,7 @@ class GameScene: SKScene {
         } else if !gameOver {
             gameOver = true
             
-            // DO SOMETHING
-            
+            gameOverCallback!.finishGame(scoreManager.getScore())
             
         }
         
