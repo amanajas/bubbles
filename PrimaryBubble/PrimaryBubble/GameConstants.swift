@@ -51,4 +51,6 @@ import SpriteKit
     // Percent of creation of prime numbers
     static let PRIME_PERCENT:Int = 25
     
+    // GameOver screen name
+    static let GAMEOVER_SCREEN : String = "OverScreen"
 }

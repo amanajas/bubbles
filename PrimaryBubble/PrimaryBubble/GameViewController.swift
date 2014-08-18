@@ -11,10 +11,9 @@ import SpriteKit
 
 class GameViewController: UIViewController, GameOver {
 
-    private var scene:GameScene?
-    private var skView:SKView!
-    
     private var audioManager:AudioManager = AudioManager()
+    private var skView:SKView!
+    private var scene:GameScene!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +27,8 @@ class GameViewController: UIViewController, GameOver {
         
         // Creating the game scene.
         scene = GameScene.sceneWithSize(skView.bounds.size) as GameScene
-        scene!.scaleMode = SKSceneScaleMode.AspectFill
-        scene!.setGameOverCallback(self)
+        scene.scaleMode = SKSceneScaleMode.AspectFill
+        scene.setGameOverCallback(self)
         skView.presentScene(scene)
         
     }
@@ -57,8 +56,7 @@ class GameViewController: UIViewController, GameOver {
     
     func finishGame(score: String) {
         
-        let gameOverScreen = self.storyboard.instantiateViewControllerWithIdentifier("OverScreen") as UIViewController
-        
+        let gameOverScreen = self.storyboard.instantiateViewControllerWithIdentifier(GameConstants.GAMEOVER_SCREEN) as UIViewController
         showViewController(gameOverScreen, sender: self)
     }
 }
