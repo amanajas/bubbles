@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PrimaryBubble/BubbleManager.swift"
-            timestampString = "429642440.658467"
+            timestampString = "430076203.886011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "checkTouch(_:touches:)"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "update()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,13 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PrimaryBubble/BubbleManager.swift"
-            timestampString = "429624115.363176"
+            timestampString = "430076203.886011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "init(bounds:)"
-            landmarkType = "5">
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "BubbleManager"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PrimaryBubble/BubbleManager.swift"
-            timestampString = "429624115.363176"
+            timestampString = "430076203.886011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "createBubble()"
             landmarkType = "5">
             <Locations>
@@ -141,6 +141,52 @@
             endingLineNumber = "60"
             landmarkName = "finishGame(_:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PrimaryBubble/BubbleManager.swift"
+            timestampString = "430076266.718606"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "init(bounds:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PrimaryBubble.BubbleManager.init (PrimaryBubble.BubbleManager.Type)(bounds : C.CGPoint) -&gt; PrimaryBubble.BubbleManager"
+                  moduleName = "PrimaryBubble"
+                  urlString = "file:///Users/thiago/Documents/gg_math_b/PrimaryBubble/PrimaryBubble/BubbleManager.swift"
+                  timestampString = "430076266.81903"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "5154">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PrimaryBubble.BubbleManager.init (PrimaryBubble.BubbleManager.Type)(bounds : C.CGPoint) -&gt; PrimaryBubble.BubbleManager"
+                  moduleName = "PrimaryBubble"
+                  urlString = "file:///Users/thiago/Documents/gg_math_b/PrimaryBubble/PrimaryBubble/BubbleManager.swift"
+                  timestampString = "430076266.819275"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "5290">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

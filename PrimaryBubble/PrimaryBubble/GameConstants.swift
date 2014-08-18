@@ -53,4 +53,7 @@ import SpriteKit
     
     // GameOver screen name
     static let GAMEOVER_SCREEN : String = "OverScreen"
+    
+    // Bubble explosion frame time
+    static let BUBBLE_EXPLOSION_FRAME_TIME : NSTimeInterval = 0.1
 }

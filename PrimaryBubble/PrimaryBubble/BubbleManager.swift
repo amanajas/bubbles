@@ -43,7 +43,7 @@ class BubbleManager {
         bubbleExploreArray.append(bubbleTextureAtlas.textureNamed("bubble_explode4"));
         
         // Explosion animation
-        let animateAction = SKAction.animateWithTextures(bubbleExploreArray, timePerFrame: 0.1)
+        let animateAction = SKAction.animateWithTextures(bubbleExploreArray, timePerFrame:GameConstants.BUBBLE_EXPLOSION_FRAME_TIME)
         
         // Create the action sequence, after the explosion remove the bubble
         let sequenceAction = SKAction.sequence([animateAction, SKAction.removeFromParent()])

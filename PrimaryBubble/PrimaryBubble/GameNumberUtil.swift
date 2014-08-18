@@ -71,6 +71,8 @@ class GameNumberUtil {
             numbersCount = 0
         }
         
+        println("Number: " + number.description)
+        
         return number
     }
     
