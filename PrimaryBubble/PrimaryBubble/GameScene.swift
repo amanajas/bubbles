@@ -71,7 +71,7 @@ class GameScene: SKScene {
         uiLayer.addChild(timeLabel)
     }
     
-    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+    override func touchesBegan(touches: (NSSet!), withEvent event: (UIEvent!)) {
         
         var score:Bool = bubbleManager!.checkTouch(self, touches: touches)
         if (score) {
