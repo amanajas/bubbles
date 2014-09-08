@@ -15,7 +15,7 @@ class AudioManager {
     
     func playSound(audioName:String, audioExtension:String, loops:Int){
         
-        var bgMusic:NSURL = NSBundle.mainBundle().URLForResource(audioName, withExtension: audioExtension)
+        var bgMusic:NSURL = NSBundle.mainBundle().URLForResource(audioName, withExtension: audioExtension)!
         backgroundMusicPlayer = AVAudioPlayer(contentsOfURL: bgMusic, error: nil)
         backgroundMusicPlayer.numberOfLoops = loops
         backgroundMusicPlayer.prepareToPlay()

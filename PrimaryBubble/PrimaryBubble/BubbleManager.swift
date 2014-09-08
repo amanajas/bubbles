@@ -118,7 +118,7 @@ class BubbleManager {
             if (touchedNode.name != scene.name) {
                 
                 // Check if the bubble name is a prime number
-                score = gameNumbers!.isPrime(touchedNode.name)
+                score = gameNumbers!.isPrime(touchedNode.name!)
                 
                 // Convert the parent of the touch point in a sprite node
                 let object = touchedNode.parent as SKSpriteNode

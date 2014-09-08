@@ -1,65 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aFU-cV-EYS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
-        <!--MainScreen-->
-        <scene sceneID="GV8-Fb-gQ6">
-            <objects>
-                <viewController storyboardIdentifier="MainScreen" title="MainScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aFU-cV-EYS" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uEO-LG-cEH"/>
-                        <viewControllerLayoutGuide type="bottom" id="VJD-Z4-fR6"/>
-                    </layoutGuides>
-                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="BKZ-f0-HHX">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3R-PG-Mxh">
-                                <rect key="frame" x="260" y="263" width="80" height="75"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Start" backgroundImage="bubble.png">
-                                    <color key="titleColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="143" y="125" width="115" height="110"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" identifier="StartGame" id="rTl-tU-5NG"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUBBLES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeJ-oc-kOL">
-                                <rect key="frame" x="171" y="171" width="258" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="258" id="Hth-nh-t9K"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                <color key="textColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="Z3R-PG-Mxh" secondAttribute="centerY" id="1id-pd-IrI"/>
-                            <constraint firstAttribute="centerX" secondItem="Z3R-PG-Mxh" secondAttribute="centerX" id="FRr-xI-Fb7"/>
-                            <constraint firstAttribute="centerX" secondItem="AeJ-oc-kOL" secondAttribute="centerX" id="Pxu-Ku-F6l"/>
-                            <constraint firstItem="Z3R-PG-Mxh" firstAttribute="top" secondItem="AeJ-oc-kOL" secondAttribute="bottom" constant="38" id="ucX-Kn-7Ok"/>
-                        </constraints>
-                    </view>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Jl-yS-dLB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-394.5" y="-10.499999999999998"/>
-        </scene>
         <!--GameScreen-->
         <scene sceneID="tXr-a1-R10">
             <objects>
@@ -82,78 +27,5 @@
             </objects>
             <point key="canvasLocation" x="358.125" y="-10.56338028169014"/>
         </scene>
-        <!--OverScreen-->
-        <scene sceneID="AGm-87-1g6">
-            <objects>
-                <viewController storyboardIdentifier="OverScreen" title="OverScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zqv-Oh-1S9" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hxC-3E-6f4"/>
-                        <viewControllerLayoutGuide type="bottom" id="7DE-0i-Tbe"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KZU-cl-ZUK">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME OVER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdy-HD-3xf">
-                                <rect key="frame" x="171" y="69" width="258" height="54"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.22538601080000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6H-qc-Fx3">
-                                <rect key="frame" x="260" y="262" width="80" height="75"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="Back" backgroundImage="redbubble.png">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.22538601080000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="aFU-cV-EYS" kind="show" identifier="GoToMainScreen" id="bHA-jT-xBA"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="ScoreLabel" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-9l-iqq">
-                                <rect key="frame" x="171" y="148" width="259" height="68"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="68" id="QdI-lM-d0u"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.22538601080000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5L-pK-gmO">
-                                <rect key="frame" x="236" y="124" width="129" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="129" id="QfE-sa-JZ9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.22538601080000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="0cd-9l-iqq" firstAttribute="leading" secondItem="Vdy-HD-3xf" secondAttribute="leading" id="2TW-R1-wJa"/>
-                            <constraint firstAttribute="centerX" secondItem="Vdy-HD-3xf" secondAttribute="centerX" id="VDm-BH-nzw"/>
-                            <constraint firstItem="Vdy-HD-3xf" firstAttribute="top" secondItem="KZU-cl-ZUK" secondAttribute="top" constant="69" id="Vw3-8I-sST"/>
-                            <constraint firstAttribute="centerY" secondItem="l6H-qc-Fx3" secondAttribute="centerY" id="a0t-AP-sZY"/>
-                            <constraint firstAttribute="centerX" secondItem="0cd-9l-iqq" secondAttribute="centerX" constant="-0.5" id="iB4-og-mSZ"/>
-                            <constraint firstItem="l6H-qc-Fx3" firstAttribute="top" secondItem="0cd-9l-iqq" secondAttribute="bottom" constant="46" id="l3P-de-dxo"/>
-                            <constraint firstAttribute="centerX" secondItem="f5L-pK-gmO" secondAttribute="centerX" id="mxk-iE-myE"/>
-                            <constraint firstItem="f5L-pK-gmO" firstAttribute="top" secondItem="Vdy-HD-3xf" secondAttribute="bottom" constant="1" id="mz3-bt-Dbg"/>
-                            <constraint firstAttribute="centerX" secondItem="l6H-qc-Fx3" secondAttribute="centerX" id="pcD-wa-Inb"/>
-                        </constraints>
-                    </view>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cV0-gd-eTy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-389" y="684"/>
-        </scene>
     </scenes>
-    <resources>
-        <image name="bubble.png" width="80" height="75"/>
-        <image name="redbubble.png" width="80" height="75"/>
-    </resources>
 </document>
