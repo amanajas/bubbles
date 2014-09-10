@@ -18,6 +18,7 @@ class GameScene: SKScene {
     // Labels - Score and Time
     private var scoreLabel:SKLabelNode = SKLabelNode(fontNamed:GameConstants.FONT_NAME)
     private var timeLabel:SKLabelNode = SKLabelNode(fontNamed:GameConstants.FONT_NAME)
+    private var startAndOverLabel:SKLabelNode = SKLabelNode(fontNamed:GameConstants.FONT_NAME)
     
     // The bubble create time count.
     private var bubbleCreateTime:Float = 0
@@ -56,6 +57,11 @@ class GameScene: SKScene {
         timeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
         timeLabel.fontColor = SKColor.blackColor()
         
+        startAndOverLabel.fontSize = GameConstants.TITLE_FONT_SIZE
+        startAndOverLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidX(self.frame) * 2)
+        startAndOverLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Center
+        startAndOverLabel.fontColor = SKColor.blackColor()
+        
         // Set background color
         self.backgroundColor = SKColor.whiteColor()
         
@@ -69,6 +75,7 @@ class GameScene: SKScene {
         // Add labels
         uiLayer.addChild(scoreLabel)
         uiLayer.addChild(timeLabel)
+        uiLayer.addChild(startAndOverLabel)
     }
     
     override func touchesBegan(touches: (NSSet!), withEvent event: (UIEvent!)) {
@@ -93,6 +100,8 @@ class GameScene: SKScene {
         // Show time and score
         timeLabel.text = "Time: " + timeManager.getTime()
         scoreLabel.text = "Score: " + scoreManager.getScore()
+        
+        startAndOverLabel.text = timeManager.getStartTime()
         
         // Check if the game is over.
         if (!timeManager.isOver()) {
