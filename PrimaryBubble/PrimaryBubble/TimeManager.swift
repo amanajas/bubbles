@@ -18,23 +18,17 @@ class TimeManager {
     
     init(total:Float, interval:Float) {
         
-        initTime = total
-        totalTime = total
+        initTime = total + GameConstants.START_GAME_INTERVAL
         timeInterval = interval
-        startTime = total - GameConstants.START_GAME_INTERVAL
+        reset()
     }
     
     func update() {
         
-        startTime = totalTime - (initTime - GameConstants.START_GAME_INTERVAL)
-        println(startTime - totalTime)
-        if (startTime <= 0) {
-            startTime = 0
-        }
+        startTime = startTime > 0 ? startTime - GameConstants.UPDATE_TIME : 0
         
-        totalTime -= GameConstants.UPDATE_TIME
-        if totalTime < 0 {
-            totalTime = 0
+        if (isStarted()) {
+            totalTime = totalTime > 0 ? totalTime - GameConstants.UPDATE_TIME : 0
         }
         
     }
@@ -48,16 +42,21 @@ class TimeManager {
     }
     
     func isStarted() -> Bool {
-        return startTime == 0
+        return startTime <= 1
     }
     
     func getStartTime() -> String {
-        var formatter : NSString = NSString(format: "%d", startTime)
+        var formatter : NSString = NSString(format: "%.01f", startTime)
         return formatter.description
     }
     
     func getTime() -> String {
         var formatter : NSString = NSString(format: "%.01f", totalTime)
         return formatter.description
+    }
+    
+    func reset() {
+        totalTime = initTime
+        startTime = GameConstants.START_GAME_INTERVAL
     }
 }

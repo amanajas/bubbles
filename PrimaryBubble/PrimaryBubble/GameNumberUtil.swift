@@ -10,17 +10,17 @@ import Foundation
 
 class GameNumberUtil {
     
-    // Used to balance the creation of numbers
-    private var maxNormalNumbersCount : Int = 0
-    
-    // Used to count the normal numbers
-    private var numbersCount : Int = 0
-    
     /*
         This is the prime number list that is used
-        check if a number is prime.
+        to generate a number
     */
     private var primeNumbers = [Int]();
+    
+    /*
+        This is the prime number backup list that is used
+        check if a number is prime.
+    */
+    private var lastPrimeNumbers = [Int]();
     
     /*
         This list is used to get a random number.
@@ -28,20 +28,16 @@ class GameNumberUtil {
     private var allNumbers = [Int]();
     
     
-    init(min:Int, max:Int) {
-        generateNumbers(min, max: max);
-    }
-    
     /*
         This method generates a range of numbers
         and separates the prime numbers.
     */
-    private func generateNumbers(min:Int, max:Int) {
+    private func generateNumbers() {
         
         primeNumbers = [Int]();
         allNumbers = [Int]();
         
-        for var i = min; i < max; i++ {
+        for var i = GameConstants.MIN_NUMBER; i < GameConstants.MAX_NUMBER; i++ {
             var isPrimeNumber = true
             for var j = 2; j < i; j++ {
                 if (i % j == 0) {
@@ -49,6 +45,7 @@ class GameNumberUtil {
                     break
                 }
             }
+            
             if (isPrimeNumber) {
                 primeNumbers.append(i);
             }
@@ -56,29 +53,40 @@ class GameNumberUtil {
             allNumbers.append(i);
         }
         
-        // Calculates the maximum of normal numbers must to be created before the prime numbers.
-        maxNormalNumbersCount = 1 + Int(GameConstants.DEFAULT_GAME_TIME) /
-            ((primeNumbers.count * 100) / allNumbers.count)
+        lastPrimeNumbers = primeNumbers
+    }
+    
+    private func random(total:Int) -> Int {
+        return Int(arc4random_uniform(UInt32(total)))
     }
     
     // Return a random number.
     func getRandomNumber() -> Int {
         
-        var number = allNumbers[Int(arc4random_uniform(UInt32(allNumbers.count)))]
-        numbersCount = !isPrime(number.description) ? numbersCount + 1 : 0
-        if numbersCount > Int(arc4random()) % maxNormalNumbersCount {
-            number = primeNumbers[Int(arc4random_uniform(UInt32(primeNumbers.count)))]
-            numbersCount = 0
+        if (allNumbers.count == 0 || primeNumbers.count == 0) {
+            generateNumbers()
         }
         
-        println("Number: " + number.description)
+        var index = random(allNumbers.count)
+        var number = allNumbers[index]
+        if random(primeNumbers.count) % 3 == 0 {
+            index = random(primeNumbers.count)
+            number = primeNumbers[index]
+            primeNumbers.removeAtIndex(index)
+        } else {
+            allNumbers.removeAtIndex(index)
+        }
         
         return number
     }
     
     // Check if the number is prime.
     func isPrime(number:String) -> Bool {
-        return primeNumbers.filter { $0 == number.toInt() }.count > 0
+        return lastPrimeNumbers.filter { $0 == number.toInt() }.count > 0
+    }
+    
+    func reset() {
+        generateNumbers()
     }
     
 }

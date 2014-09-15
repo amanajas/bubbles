@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class GameViewController: UIViewController, GameOver {
+class GameViewController: UIViewController {
 
     private var audioManager:AudioManager = AudioManager()
     private var skView:SKView!
@@ -28,7 +28,6 @@ class GameViewController: UIViewController, GameOver {
         // Creating the game scene.
         scene = GameScene.sceneWithSize(skView.bounds.size) as GameScene
         scene.scaleMode = SKSceneScaleMode.AspectFill
-        scene.setGameOverCallback(self)
         skView.presentScene(scene)
         
     }

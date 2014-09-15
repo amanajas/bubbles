@@ -29,4 +29,12 @@ class ScoreManager {
     func getScore() -> String {
         return String(score)
     }
+    
+    func getIntScore() -> Int {
+        return score
+    }
+    
+    func reset() {
+        score = 0
+    }
 }

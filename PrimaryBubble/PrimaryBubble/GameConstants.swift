@@ -11,6 +11,12 @@ import SpriteKit
 
  struct GameConstants {
     
+    // Maximum speed the bubble moves
+    static let MAX_BUBBLES_SPEED:Float = 2
+    
+    // Speed multiplier used to get a percentage of score value
+    static let BUBBLE_SPEED_MULTIPLIER:Float = 0.05
+    
     // The Game Font Name
     static let FONT_NAME:String = "System"
     
@@ -21,10 +27,13 @@ import SpriteKit
     static let TITLE_FONT_SIZE:CGFloat = 40
     
     // The Initial Game Time.
-    static let DEFAULT_GAME_TIME:Float = 60
+    static let DEFAULT_GAME_TIME:Float = 5
     
     // The Start Game Interval.
-    static let START_GAME_INTERVAL:Float = 3
+    static let START_GAME_INTERVAL:Float = 5
+    
+    // The Start Game Interval Animation.
+    static let START_GAME_INTERVAL_ANIMATION:NSTimeInterval = 1
     
     // The Time Bonus that it's gain when the player hits the prime number.
     static let BONUS_TIME:Float = 4.5
@@ -40,7 +49,7 @@ import SpriteKit
     static let SCORE_POINT:Int = 10
     
     // The points the user lose when hits the wrong number
-    static let SCORE_LOST:Int = 5
+    static let SCORE_LOST:Int = 50
     
     // The space between labels and the screen border.
     static let SCREEN_BORDER:CGFloat = 10
@@ -52,7 +61,7 @@ import SpriteKit
     static let BUBBLE_FONT_SIZE:Float = 25
     
     // The Bubble moviment time to end the path
-    static let BUBBLE_MOVIMENT_TIME:NSTimeInterval = 10
+    static let BUBBLE_MOVIMENT_TIME:Float = 10
     
     // Percent of creation of prime numbers
     static let PRIME_PERCENT:Int = 25

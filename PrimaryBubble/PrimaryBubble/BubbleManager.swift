@@ -18,7 +18,7 @@ class BubbleManager {
     private var explodeAction : SKAction?
     
     // Numbers generator
-    private var gameNumbers:GameNumberUtil?
+    private var gameNumbers:GameNumberUtil = GameNumberUtil()
     
     // The list of bubbles to check the touch
     private var bubbleList:NSMutableArray = NSMutableArray()
@@ -27,10 +27,11 @@ class BubbleManager {
     private var bubbleBounds:CGPoint?
     
     
+    func reset() {
+        gameNumbers.reset()
+    }
+    
     init(bounds:CGPoint) {
-        
-        // Create numbers
-        gameNumbers = GameNumberUtil(min: GameConstants.MIN_NUMBER, max: GameConstants.MAX_NUMBER)
         
         // Save the bounds
         bubbleBounds = bounds
@@ -56,7 +57,7 @@ class BubbleManager {
         This method creates the bubble including the number
         and the start position.
     */
-    func createBubble() -> SKSpriteNode {
+    func createBubble(speed:NSTimeInterval) -> SKSpriteNode {
         
         // Bubble sprite
         var bubble:SKSpriteNode = SKSpriteNode(texture:bubbleTextureAtlas.textureNamed("bubble"))
@@ -68,7 +69,7 @@ class BubbleManager {
         let position:CGFloat = CGFloat(arc4random()) % CGFloat(rangeX) + CGFloat(minX)
         
         // Set bubble position below the screen
-        bubble.position = CGPointMake(position, -bubble.size.height * 2)
+        bubble.position = CGPointMake(position, -bubble.size.height * 1.5)
         
         // Create and add number label
         var label:SKLabelNode = createNumber()
@@ -80,7 +81,7 @@ class BubbleManager {
         bubble.addChild(bubblehit)
         
         // Set bubble move action
-        let moveAction = SKAction.moveTo(CGPoint(x: position, y: bubbleBounds!.y), duration: GameConstants.BUBBLE_MOVIMENT_TIME)
+        let moveAction = SKAction.moveTo(CGPoint(x: position, y: bubbleBounds!.y), duration: speed)
         bubble.runAction(moveAction)
         
         // Add bubble to the check list
@@ -97,7 +98,7 @@ class BubbleManager {
         
         var numberLabel:SKLabelNode = SKLabelNode(fontNamed:GameConstants.FONT_NAME)
         numberLabel.fontSize = CGFloat(GameConstants.BUBBLE_FONT_SIZE)
-        numberLabel.text = gameNumbers!.getRandomNumber().description
+        numberLabel.text = gameNumbers.getRandomNumber().description
         numberLabel.position = CGPointMake(0, CGFloat(-GameConstants.BUBBLE_FONT_SIZE / 2))
         return numberLabel
         
@@ -118,7 +119,7 @@ class BubbleManager {
             if (touchedNode.name != scene.name) {
                 
                 // Check if the bubble name is a prime number
-                score = gameNumbers!.isPrime(touchedNode.name!)
+                score = gameNumbers.isPrime(touchedNode.name!)
                 
                 // Convert the parent of the touch point in a sprite node
                 let object = touchedNode.parent as SKSpriteNode
@@ -149,6 +150,14 @@ class BubbleManager {
                 bubble.removeFromParent()
                 bubbleList.removeObject(bubble)
             }
+        }
+    }
+
+    // Explode all bubbles
+    func destroyAllBubbles() {
+        for bubble in bubbleList {
+            bubbleList.removeObject(bubble)
+            bubble.runAction(explodeAction)
         }
     }
 }

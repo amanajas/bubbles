@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PrimaryBubble/GameScene.swift"
-            timestampString = "431974666.126767"
+            filePath = "PrimaryBubble/BubbleManager.swift"
+            timestampString = "432475712.864101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "update(_:)"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "createBubble(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
