@@ -116,6 +116,7 @@ class GameScene: SKScene {
             resetGame()
         }
     }
+    
     func getBubbleMovimentSpeed() -> (Float, NSTimeInterval) {
         let calSpeed = GameConstants.BUBBLE_MOVIMENT_TIME - Float(scoreManager.getIntScore()) * GameConstants.BUBBLE_SPEED_MULTIPLIER
         let speed = (calSpeed < GameConstants.MAX_BUBBLES_SPEED ? GameConstants.MAX_BUBBLES_SPEED : calSpeed)

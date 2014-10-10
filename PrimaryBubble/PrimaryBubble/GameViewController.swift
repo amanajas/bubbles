@@ -52,9 +52,4 @@ class GameViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-    
-    func finishGame(score: String) {
-        
-        
-    }
 }
